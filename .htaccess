@@ -1,0 +1,12 @@
+ErrorDocument 404 /sites/404.php
+RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([A-Za-z_]*)$ sites/$1.php
+
+#RewriteCond %{HTTP_HOST} !=paula.mittelerde.biz
+#RewriteRule (.*) http://paula.mittelerde.biz/plan$1 [R=301,L]
+
