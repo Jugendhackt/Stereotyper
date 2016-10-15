@@ -1,4 +1,4 @@
-var myApp = angular.module('stereotyper', ['ui.router']);
+var myApp = angular.module('stereotyper', ['ui.router', 'LocalStorageModule']);
 
 myApp.config(function($stateProvider, $locationProvider) {
     var login = {

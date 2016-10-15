@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Fragen</title>
-</head>
-<body>
-  <div class="container">
+  <div ng-controller="QuestionsController" class="container">
       <nav class="navbar navbar-light bg-faded">
           <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
               &#9776;
@@ -26,28 +19,10 @@
           </div>
       </nav>
       <br /> <br />
-      <div class="jumbotron">
-          <h1>Fragen</h1>
-          <p>Bitte beantworte die folgenden Fragen so ehrlich wie möglich. Viel Spaß!</p>
-          <div class="input-group">
-
-              <h2>Wie stehst du zu xyz?</h2>
-
-          </div> <br />
-          <table>
-            <tr>
-          <td><p>
-              <a ui-sref="result" class="btn btn-lg btn-primary"  ui-sref-active="active" role="button">Ja &raquo;   </a>         </p></td>
-          <td> <p>
-              <a ui-sref="questions2" class="btn btn-lg btn-primary" ui-sref-active="active" role="button">Nein &raquo;</a>
-          </p></td>
-          <td> <p>
-              <a ui-sref="questions2" class="btn btn-lg btn-primary"  ui-sref-active="active" role="button">Überspringen &raquo;</a>
-          </p></td>
-        </tr>
-        </table>
-      </div>
-      </div>
+       <div class="jumbotron">
+         <h1>Fragen</h1>
+         <p>Bitte beantworte die folgenden Fragen so ehrlich wie möglich. Viel Spaß!</p>
+         <div class="input-group">               <h2>{{quest}}</h2>           </div> <br />           <table>             <tr>           <td><p>               <a ui-sref="result" class="btn btn-lg btn-success"  ui-sref-active="active" role="button">Ja &raquo;   </a>         </p></td>           <td> <p>             <a ui-sref="result" class="btn btn-lg btn-danger"  ui-sref-active="active" role="button">Nein &raquo;   </a>         </p></td>           </p></td>           <td> <p>             <a ui-sref="result" class="btn btn-lg btn-info"  ui-sref-active="active" role="button">Überspringen &raquo;   </a>         </p></td>           </p></td>         </tr>         </table>       </div>       </div>
 
       <footer class="footer">
           <div class="container">
@@ -55,8 +30,3 @@
           </div>
       </footer>
   </div>
-
-
-
-</body>
-</html>
