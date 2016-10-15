@@ -72,7 +72,7 @@ myApp.controller("QuestionsController", function ($scope, localStorageService, $
        $scope.pager++;
 
        if($scope.pager == 10) {
-         $state.go("result");
+         $state.go("match");
        }
      }
   });
