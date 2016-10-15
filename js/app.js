@@ -10,19 +10,19 @@ myApp.config(function($stateProvider, $locationProvider) {
     var goQuestion = {
         name: 'questions',
         url: '/questions',
-        template: '<h3>Ja geht</h3>'
+        templateUrl: "template/question.html"
     }
 
     var match = {
         name: 'match',
         url: '/match',
-        template: '<h3>Its the UI-Router hello world app!</h3>'
+        templateUrl: "template/match.html"
     }
 
     var result = {
         name: 'result',
         url: '/result',
-        templateUrl: 'template/result.html'
+        templateUrl: "template/result.html"
     }
 
     var information = {
@@ -38,5 +38,3 @@ myApp.config(function($stateProvider, $locationProvider) {
     $stateProvider.state(information);
     $locationProvider.html5Mode(true);
 });
-
-
