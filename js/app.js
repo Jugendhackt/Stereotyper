@@ -22,13 +22,20 @@ myApp.config(function($stateProvider, $locationProvider) {
     var result = {
         name: 'result',
         url: '/result',
-        template: '<h3>Test 1 2 3</h3>'
+        templateUrl: 'template/result.html'
+    }
+
+    var information = {
+        name: 'information',
+        url: '/information',
+        templateUrl: 'template/information.html'
     }
 
     $stateProvider.state(login);
     $stateProvider.state(result);
     $stateProvider.state(goQuestion);
     $stateProvider.state(match);
+    $stateProvider.state(information);
     $locationProvider.html5Mode(true);
 });
 
