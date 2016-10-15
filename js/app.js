@@ -31,10 +31,25 @@ myApp.config(function($stateProvider, $locationProvider) {
         templateUrl: 'template/information.html'
     }
 
+    var newquestion = {
+        name: 'newquestion',
+        url: '/newquestion',
+        templateUrl: 'template/newquestion.html'
+    }
+
+    var danke = {
+        name: 'danke',
+        url: '/danke',
+        templateUrl: 'template/danke.html'
+    }
+
+
     $stateProvider.state(login);
     $stateProvider.state(result);
     $stateProvider.state(goQuestion);
     $stateProvider.state(match);
     $stateProvider.state(information);
+    $stateProvider.state(newquestion);
+    $stateProvider.state(danke);
     $locationProvider.html5Mode(true);
 });
