@@ -8,7 +8,7 @@ myApp.controller("LoginController", function ($scope, localStorageService) {
   }
 });
 
-myApp.controller("QuestionsController", function ($scope, localStorageService) {
+myApp.controller("QuestionsController", function ($scope, localStorageService, $state) {
     var index = [];
     var questions = ["Magst du Flüchtlinge?",
         "Hast du ein Problem mit gleichgeschlechtlicher Ehe?",
@@ -38,9 +38,41 @@ myApp.controller("QuestionsController", function ($scope, localStorageService) {
         "Muslime sind Terroristen.",
         "Ausländer sind besonders kriminell.",
         "Türken sind aggressiv.",
-        "Türken sind ungebilder.",
-    ];
+        "Türken sind ungebildet."];
 
-    $scope.quest = "test";
-    alert(localStorageService.get("nick"));
-});
+    var question = questions[Math.floor(Math.random()*questions.length)];
+
+     $scope.quest = question;
+     $scope.pager = 1;
+     var result = [];
+
+     $scope.yes = function () {
+       result = {question:"yes"};
+       next();
+     }
+
+     $scope.skip = function () {
+       result = {question:"skip"};
+       next();
+     }
+
+     $scope.no = function () {
+       result = {question:"no"};
+       next();
+     }
+
+     function next() {
+       index.push(question);
+       var newitem = questions[Math.floor(Math.random()*questions.length)];
+       while (index.indexOf(newitem) != -1) {
+         console.log(index.indexOf(newitem));
+         var newitem = questions[Math.floor(Math.random()*questions.length)];
+       };
+       $scope.quest = newitem;
+       $scope.pager++;
+
+       if($scope.pager == 10) {
+         $state.go("result");
+       }
+     }
+  });
